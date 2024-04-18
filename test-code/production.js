@@ -4,14 +4,17 @@ export class bagel {
     }
 }
 
-
 export class basket {
     constructor() {
         this.contents = [];
     }
 
     addBagel(newBagel) {
-        //contents.append(newBagel);
+        this.contents.push(newBagel);
         return "Added to basket";
+    }
+
+    getContents() {
+        return this.contents;
     }
 };
