@@ -29,6 +29,9 @@ export class basket {
     }
 
     isBasketFull() {
+        if (this.getCount() >= 5) { 
+            return true;
+        }
         return false;
     }
 };
