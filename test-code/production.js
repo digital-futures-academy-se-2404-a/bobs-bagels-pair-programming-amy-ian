@@ -17,4 +17,10 @@ export class basket {
     getContents() {
         return this.contents;
     }
+
+    removeBagel(remBagel) {
+        let index = this.contents.indexOf(remBagel);
+        this.contents.splice(index, 1);
+        return "Removed from basket";
+    }
 };

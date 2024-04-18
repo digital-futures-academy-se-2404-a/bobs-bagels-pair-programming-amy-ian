@@ -5,7 +5,7 @@ import { bagel, basket } from "./production.js";
 const sesameBagel = new bagel("Sesame");
 const currantBagel = new bagel("Currant");
 let theBasket =  new basket();
-const expected = "Added to basket";
+let expected = "Added to basket";
 let actual, result;
 
 // Act
@@ -28,6 +28,7 @@ bagelsInBasket.forEach(item => {
 // ## User Story 2 Test
 // Arrange
 // As above
+expected = "Removed from basket";
 //Act
 actual = theBasket.removeBagel(sesameBagel);
 
