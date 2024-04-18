@@ -14,13 +14,17 @@ export class basket {
         return "Added to basket";
     }
 
-    getContents() {
-        return this.contents;
-    }
-
     removeBagel(remBagel) {
         let index = this.contents.indexOf(remBagel);
         this.contents.splice(index, 1);
         return "Removed from basket";
+    }
+
+    getContents() {
+        return this.contents;
+    }
+
+    getCount() {
+        return this.contents.length;
     }
 };

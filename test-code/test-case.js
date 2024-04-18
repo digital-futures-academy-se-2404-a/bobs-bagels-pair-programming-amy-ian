@@ -50,7 +50,7 @@ expected = 1;
 
 //act
 
-actual = theBasket.GetCount();
+actual = theBasket.getCount();
 
 result = assertEquals(actual, expected)
 console.log("Able to say how many bagels are in the basket?:")
