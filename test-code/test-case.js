@@ -20,7 +20,24 @@ console.log("Added to basket?");
 console.log(result);
 
 let bagelsInBasket = theBasket.getContents();
+console.log("Bagels in Basket:")
+bagelsInBasket.forEach(item => {
+    console.log(item);    
+});
 
+// ## User Story 2 Test
+// Arrange
+// As above
+//Act
+actual = theBasket.removeBagel(sesameBagel);
+
+//Assert
+result = assertEquals(actual, expected);
+//Report
+console.log("Removed from basket?");
+console.log(result);
+bagelsInBasket = theBasket.getContents();
+console.log("Bagels in Basket:")
 bagelsInBasket.forEach(item => {
     console.log(item);    
 });
