@@ -52,8 +52,8 @@ expected = 1;
 
 actual = theBasket.getCount();
 
-result = assertEquals(actual, expected)
-console.log("Able to say how many bagels are in the basket?:")
+result = assertEquals(actual, expected);
+console.log("Able to say how many bagels are in the basket?:");
 console.log(result);
 
 // ## User story 3.2 test
@@ -65,7 +65,27 @@ expected = false;
 //act
 actual = theBasket.isBasketFull();
 
-result = assertEquals(actual, expected)
-console.log("Is the basket full?:")
+result = assertEquals(actual, expected);
+console.log("Is the basket full?:");
 console.log(result);
 
+// ## User story 3.3 test
+//* Is the basket full? *//
+//arrange
+theBasket.addBagel("Chicken");
+theBasket.addBagel("Plain");
+theBasket.addBagel("Mexican Bean");
+theBasket.addBagel("Banananana");
+
+expected = true;
+
+//act
+actual = theBasket.isBasketFull();
+
+//assert
+
+result = assertEquals(actual, expected);
+
+//report
+console.log("Did it report a full basket?");
+console.log(result);

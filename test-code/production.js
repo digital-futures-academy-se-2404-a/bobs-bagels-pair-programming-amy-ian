@@ -27,4 +27,8 @@ export class basket {
     getCount() {
         return this.contents.length;
     }
+
+    isBasketFull() {
+        return false;
+    }
 };
