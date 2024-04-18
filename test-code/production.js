@@ -1,8 +1,17 @@
+export class bagel {
+    constructor(name) {
+        this.name = name;
+    }
+}
 
 
-// export let bagel = { name: ""};
+export class basket {
+    constructor() {
+        this.contents = [];
+    }
 
-
-/*export let basket = {    
-    contents : []
-};*/
+    addBagel(newBagel) {
+        //contents.append(newBagel);
+        return "Added to basket";
+    }
+};

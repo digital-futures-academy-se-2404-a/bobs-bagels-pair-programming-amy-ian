@@ -1,15 +1,25 @@
-import { assertEquals } from "./test-fundamentals"; 
-import { bagel, basket } from "./production";
+import { assertEquals } from "./test-fundamentals.js"; 
+import { bagel, basket } from "./production.js";
 // ## User Story 1 Test
 // Arrange
-let newBagel = bagel;
-newBagel.name = "Sesame";
-let theBasket = basket;
+const sesameBagel =  new bagel("Sesame");
+let theBasket =  new basket();
 const expected = "Added to basket";
 let actual, result;
 
 // Act
-actual = addBagel(bagel);
+actual = theBasket.addBagel(sesameBagel);
 
 // Assert
-assertEquals(actual, expected);
+result = assertEquals(actual, expected);
+
+//report
+console.log("Added to basket?");
+console.log(result);
+
+let bagelsInBasket = theBasket.getContents();
+
+bagelsInBasket.forEach(item => {
+    console.log(item);
+    
+});
