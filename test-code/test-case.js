@@ -43,7 +43,7 @@ bagelsInBasket.forEach(item => {
     console.log(item);    
 });
 
-// ## User story 3 test
+// ## User story 3.1 test
 // arrange
 // as above
 expected = 1;
@@ -54,5 +54,18 @@ actual = theBasket.getCount();
 
 result = assertEquals(actual, expected)
 console.log("Able to say how many bagels are in the basket?:")
+console.log(result);
+
+// ## User story 3.2 test
+//* Is the basket not full? *//
+// arrange
+// as above
+expected = false;
+
+//act
+actual = theBasket.isBasketFull();
+
+result = assertEquals(actual, expected)
+console.log("Is the basket full?:")
 console.log(result);
 
