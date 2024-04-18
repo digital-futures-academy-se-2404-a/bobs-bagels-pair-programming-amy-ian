@@ -1,9 +1,11 @@
 import { assertEquals } from "./test-fundamentals.js"; 
 import { bagel, basket } from "./production.js";
+import allBagels from "./test-bagels.js";
+
 // ## User Story 1 Test
 // Arrange
-const sesameBagel = new bagel("Sesame");
-const currantBagel = new bagel("Currant");
+const sesameBagel = allBagels.sesameBagel;
+const currantBagel = allBagels.currantBagel;
 let theBasket = new basket();
 let expected = "Added to basket";
 let actual, result;
@@ -72,10 +74,10 @@ console.log(result);
 // ## User story 3.3 test
 //* Is the basket full? *//
 //arrange
-theBasket.addBagel(new bagel("Chicken"));
-theBasket.addBagel(new bagel("Plain"));
-theBasket.addBagel(new bagel("Mexican Bean"));
-theBasket.addBagel(new bagel("Banananana"));
+theBasket.addBagel(allBagels.chickenBagel);
+theBasket.addBagel(allBagels.plainBagel);
+theBasket.addBagel(allBagels.mexicanBean);
+theBasket.addBagel(allBagels.bananaBagel);
 
 expected = true;
 
@@ -119,6 +121,29 @@ actual = theBasket.getCapacity();
 
 //assert
 result = assertEquals(actual, expected);
+
+//report
+
 console.log(`Capacity was ${startMaxCapacity}. I want to increase it to ${increaseSize}. Basket size is now ${actual}.`); 
 console.log(`did it do it?: ${result}`);
 
+
+//Test to ensure isItFull method still functions correctly with different
+//sized capacity
+//arrange
+
+theBasket.addBagel(allBagels.sesameBagel);
+
+expected = false
+
+//act
+actual = theBasket.isBasketFull();
+
+//assert
+result = assertEquals(actual, expected);
+
+//report
+bagelsInTheBasket();
+
+console.log(`Did it report a full basket? cap: ${theBasket.getCapacity()}  items: ${theBasket.getCount()} in the basket`);
+console.log(result);
