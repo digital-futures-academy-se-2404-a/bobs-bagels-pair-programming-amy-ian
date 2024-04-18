@@ -42,3 +42,17 @@ console.log("Bagels in Basket:")
 bagelsInBasket.forEach(item => {
     console.log(item);    
 });
+
+// ## User story 3 test
+// arrange
+// as above
+expected = 1;
+
+//act
+
+actual = theBasket.GetCount();
+
+result = assertEquals(actual, expected)
+console.log("Able to say how many bagels are in the basket?:")
+console.log(result);
+
