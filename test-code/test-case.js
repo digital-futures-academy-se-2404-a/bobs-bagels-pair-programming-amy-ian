@@ -106,7 +106,7 @@ bagelsInTheBasket();
 
 // //report
 
-// ## User story 4.1 test
+// ## User story 4 test
 //* Increase size of basket capacity to > 5 *//
 //arrange
 const startMaxCapacity = theBasket.getCapacity();
@@ -121,3 +121,4 @@ actual = theBasket.getCapacity();
 result = assertEquals(actual, expected);
 console.log(`Capacity was ${startMaxCapacity}. I want to increase it to ${increaseSize}. Basket size is now ${actual}.`); 
 console.log(`did it do it?: ${result}`);
+
