@@ -261,3 +261,33 @@ console.log(`==================`);
 
 // Clean Up
 afterEach();
+
+
+//## User Story 5 - Test to ensure unable to remove bagels not in basket
+//arrange
+theBasket.addBagel(allBagels.sesameBagel);
+theBasket.addBagel(allBagels.currantBagel);
+console.log(`bagels added to basket:`);
+bagelsInTheBasket();
+
+expected = "Bagel not in basket";
+
+
+
+//act
+actual = theBasket.removeBagel(allBagels.bananaBagel);
+
+//assert
+result = assertEquals(actual, expected);
+
+//report
+
+console.log(`Test 5.1`);
+console.log(`==================`);
+console.log(`attempt to remove banana bagel from a basket containing:`); 
+bagelsInTheBasket();
+console.log("result: ");
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+bagelsInTheBasket();
+console.log(`==================`);
