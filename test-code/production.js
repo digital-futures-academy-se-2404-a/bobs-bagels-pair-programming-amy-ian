@@ -1,8 +1,5 @@
-export class bagel {
-    constructor(name) {
-        this.name = name;        
-    }
-}
+
+import { bagel } from "./bagel.js";
 
 export class basket {
   constructor() {

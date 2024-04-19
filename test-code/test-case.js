@@ -1,5 +1,6 @@
 import { assertEquals } from "./test-fundamentals.js"; 
 import { basket } from "./production.js";
+import { bagel } from "./bagel.js";
 import allBagels from "./test-bagels.js";
 
 // ## User Story 1.1 Test - Add bagel to basket and check if basket length increased by 1

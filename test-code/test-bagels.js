@@ -1,4 +1,4 @@
-import { bagel } from "./production.js";
+import { bagel } from "./bagel.js";
 
 const allBagels = {
     chickenBagel: new bagel("Chicken"),
