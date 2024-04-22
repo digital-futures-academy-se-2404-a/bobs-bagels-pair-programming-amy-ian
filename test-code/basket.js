@@ -1,6 +1,4 @@
 
-import { bagel } from "./bagel.js";
-
 export class basket {
   constructor() {
       this.contents = [];
@@ -14,8 +12,11 @@ export class basket {
 
   removeBagel(remBagel) {
     let index = this.contents.indexOf(remBagel);
-    this.contents.splice(index, 1);
-    return "Removed from basket";
+    if (index > -1) {
+      this.contents.splice(index, 1);
+      return "Removed from basket";
+    } 
+      return "Bagel not in basket";
   }
 
   getContents() {

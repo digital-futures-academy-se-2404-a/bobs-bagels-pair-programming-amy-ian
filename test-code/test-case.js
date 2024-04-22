@@ -1,6 +1,5 @@
 import { assertEquals } from "./test-fundamentals.js"; 
-import { basket } from "./production.js";
-import { bagel } from "./bagel.js";
+import { basket } from "./basket.js";
 import allBagels from "./test-bagels.js";
 
 // ## User Story 1.1 Test - Add bagel to basket and check if basket length increased by 1
@@ -205,7 +204,7 @@ afterEach();
 // //assert
 // result = assertEquals(actual, expected);
 
-// //report
+//report
 
 // ## User story 4.1 test - Increase size of basket capacity to > 5
 //arrange
@@ -269,10 +268,8 @@ theBasket.addBagel(allBagels.sesameBagel);
 theBasket.addBagel(allBagels.currantBagel);
 console.log(`bagels added to basket:`);
 bagelsInTheBasket();
-
+console.log(`==================`);
 expected = "Bagel not in basket";
-
-
 
 //act
 actual = theBasket.removeBagel(allBagels.bananaBagel);
@@ -281,13 +278,8 @@ actual = theBasket.removeBagel(allBagels.bananaBagel);
 result = assertEquals(actual, expected);
 
 //report
-
 console.log(`Test 5.1`);
 console.log(`==================`);
-console.log(`attempt to remove banana bagel from a basket containing:`); 
-bagelsInTheBasket();
-console.log("result: ");
-console.log(result ? `Pass` : `Fail`);
-!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
-bagelsInTheBasket();
-console.log(`==================`);
+    console.log(`Attempt to remove banana bagel from a basket containing: ${result ? 'Pass' : `Fail \n Expected: ${expected} Actual: ${actual}`}    
+    `);
+    if (!result) {bagelsInTheBasket()}
