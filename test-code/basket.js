@@ -6,6 +6,10 @@ export class basket {
   }
 
   addBagel(newBagel) {
+    if (this.isBasketFull()) {
+      return "Error: Basket too full.";
+    }
+
     this.contents.push(newBagel);
     return "Added to basket";
   }

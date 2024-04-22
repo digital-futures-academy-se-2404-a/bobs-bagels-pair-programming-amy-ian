@@ -213,7 +213,7 @@ console.log(`==================`);
 console.log("If basket full, don't allow customer to add another bagel.");
 console.log(result ? `Pass` : `Fail`);
 !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
-bagelsInTheBasket();
+!result && bagelsInTheBasket();
 console.log(`==================`);
 
 // ## User story 4.1 test - Increase size of basket capacity to > 5
@@ -276,9 +276,6 @@ afterEach();
 //arrange
 theBasket.addBagel(allBagels.sesameBagel);
 theBasket.addBagel(allBagels.currantBagel);
-console.log(`bagels added to basket:`);
-bagelsInTheBasket();
-console.log(`==================`);
 expected = "Bagel not in basket";
 
 //act
@@ -290,6 +287,29 @@ result = assertEquals(actual, expected);
 //report
 console.log(`Test 5.1`);
 console.log(`==================`);
-    console.log(`Attempt to remove banana bagel from a basket containing: ${result ? 'Pass' : `Fail \n Expected: ${expected} Actual: ${actual}`}    
-    `);
-    if (!result) {bagelsInTheBasket()}
+console.log(`Attempt to remove banana bagel from a basket containing none: ${result ? 'Pass' : `Fail \n Expected: ${expected} Actual: ${actual}`}`);
+!result && bagelsInTheBasket();
+
+// Clean Up
+afterEach();
+
+//## User Story 6 - Test to ensure you are unable to add bagels to the basket if it is already in the basket
+//arrange
+theBasket.addBagel(allBagels.sesameBagel);
+expected = "Error: Bagel in basket already"
+
+
+//act
+actual = theBasket.addBagel(allBagels.sesameBagel);
+
+//assert
+result = assertEquals(actual, expected);
+
+//report
+console.log(`Test 6.1`);
+console.log(`==================`);
+console.log(`Attempt to add sesame bagel to a basket already containing one: ${result ? 'Pass' : `Fail \n Expected: ${expected} Actual: ${actual}`}`);
+if (!result) { bagelsInTheBasket() }
+
+// Clean Up
+afterEach();
