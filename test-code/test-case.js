@@ -191,20 +191,30 @@ console.log(`==================`);
 // Clean Up
 afterEach();
 
-// // ## User story 3.3 test
-// //* If basket full, don't allow customer to add another bagel *//
-// //arrange
-// theBasket.addBagel(new bagel("Multigrain"));
-// theBasket.addBagel(new bagel("Wheat"));
-// expected = false;
+// ## User story 3.4 test
+//* If basket full, don't allow customer to add another bagel *//
+//arrange
+theBasket.addBagel(allBagels.sesameBagel);
+theBasket.addBagel(allBagels.chickenBagel);
+theBasket.addBagel(allBagels.plainBagel);
+theBasket.addBagel(allBagels.mexicanBean);
+theBasket.addBagel(allBagels.mexicanBean);
+expected = "Error: Basket too full.";
 
-// //act
-// actual = addBagel
+//act
+actual = theBasket.addBagel(allBagels.bananaBagel);
     
-// //assert
-// result = assertEquals(actual, expected);
+//assert
+result = assertEquals(actual, expected);
 
 //report
+console.log(`Test 3.4`);
+console.log(`==================`);
+console.log("If basket full, don't allow customer to add another bagel.");
+console.log(result ? `Pass` : `Fail`);
+!result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+bagelsInTheBasket();
+console.log(`==================`);
 
 // ## User story 4.1 test - Increase size of basket capacity to > 5
 //arrange
